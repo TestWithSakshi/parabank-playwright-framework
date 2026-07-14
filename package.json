@@ -1,0 +1,33 @@
+{
+  "name": "parabank-playwright-framework",
+  "version": "3.0.0",
+  "description": "Playwright + TypeScript automation framework for Sign Up / Sign In on parabank.parasoft.com",
+  "author": "Sakshi Jindal",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "clean": "node scripts/cleanup.js",
+    "pretest": "npm run clean",
+    "test": "node scripts/run-tests.js",
+    "test:ci": "cross-env HEADLESS=true node scripts/run-tests.js",
+    "test:signup": "node scripts/run-tests.js tests/signup",
+    "test:signin": "node scripts/run-tests.js tests/signin",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "typecheck": "tsc --noEmit",
+    "report:html": "playwright show-report",
+    "report:allure": "node scripts/allure-report.js",
+    "trace:open": "playwright show-trace"
+  },
+  "keywords": ["playwright", "typescript", "automation", "qa", "e2e", "parabank"],
+  "devDependencies": {
+    "@faker-js/faker": "^10.5.0",
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.1",
+    "allure-commandline": "^2.43.0",
+    "allure-playwright": "^3.10.2",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.4.2",
+    "typescript": "^7.0.2"
+  }
+}
