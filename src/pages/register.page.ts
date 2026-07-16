@@ -62,7 +62,10 @@ export class RegisterPage extends BasePage {
   }
 
   async submit(): Promise<void> {
-    await this.registerButton.click();
+    await Promise.all([
+      this.page.waitForNavigation({ waitUntil: 'domcontentloaded' }),
+      this.registerButton.click(),
+    ]);
   }
 
   async register(details: RegistrationDetails): Promise<void> {
@@ -71,6 +74,7 @@ export class RegisterPage extends BasePage {
   }
 
   async expectSuccess(): Promise<void> {
+    await this.welcomeHeading.waitFor({ state: 'visible' });
     await expect(this.welcomeHeading).toBeVisible();
     await expect(this.successMessage).toBeVisible();
   }
