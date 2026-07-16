@@ -239,6 +239,17 @@ Report successfully generated to allure-report
 | Videos | `test-results/**/*.webm` | Play in any browser — recorded at **1920×1080** to match the maximized window. |
 | Screenshots | `test-results/**/*.png` + per-step attachments inside Allure | Auto-attached to every step. |
 
+### Allure Report Dashboard
+
+The Allure report provides a rich, interactive dashboard showing:
+- **Test Overview**: Total passed, failed, flaky, skipped counts
+- **Suites**: Organized by feature (Sign Up / Sign In)
+- **Test Details**: Full execution timeline, Playwright traces, videos, and per-step screenshots
+- **Trends**: Historical pass/fail rates across runs
+- **Attachments**: Screenshots, videos, and logs for each step
+
+Example report includes comprehensive evidence for every test step, making root-cause analysis and debugging fast.
+
 ---
 
 ## 🧪 Test Coverage Matrix
